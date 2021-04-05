@@ -1,3 +1,5 @@
+#original found in https://scicomp.stackexchange.com/questions/34084/numerical-solution-to-rayleigh-plesset-equation-in-python
+#changed the equation which is used.
 import numpy as np
 from matplotlib import pyplot as plt
 from scipy.integrate import odeint
