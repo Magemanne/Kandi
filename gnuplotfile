@@ -1,0 +1,28 @@
+#!/usr/bin/gnuplot
+#
+# Plotting the data of file plotting_data1.dat
+#
+# AUTHOR: Hagen Wierstorf
+
+reset
+
+# png
+set terminal pngcairo size 1000, 800 enhanced font 'Verdana,22'
+set output 'plotting_data1.png'
+
+set border linewidth 1.5
+# Set first linestyle to blue (#0060ad)
+set style line 1 \
+    linecolor rgb '#0060ad' \
+    linetype 2 linewidth 2 \
+    pointtype 0 pointsize 4
+
+unset key
+#set xrange [0:30000]
+#set yrange [220:-40]
+set ylabel 'Paine (MPa)'
+set xlabel 'Aika (ps) '
+set title 'Systeemin paine ajan funktiona'
+#unset xtics
+#unset ytics
+plot 'wat.PressAve' using ($1*0.001):(0.1*$2) t 'Systeemin paine' w lp ls 1
