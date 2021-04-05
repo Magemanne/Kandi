@@ -1,0 +1,9 @@
+#original from https://www.ovito.org/forum/topic/export-volume-area-of-regions-in-construct-surface-modifier/
+from ovito.data import DataTable
+def modify(frame, data):
+    regions = data.surfaces['surface'].regions
+    table = DataTable(identifier='regions', title='Volumetric regions')
+    table.y = table.create_property('Volume', data=regions['Volume'])
+    table.create_property('Filled', data=regions['Filled'])
+    table.create_property('Surface Area', data=regions['Surface Area'])
+    data.objects.append(table)
